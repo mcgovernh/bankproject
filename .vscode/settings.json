@@ -1,0 +1,32 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "DorsetBank",
+            "database": "python_mysql",
+            "username": "root",
+            "password": ""
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "172.17.0.188",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "blacknight",
+            "database": "db1503719_wp_wdd",
+            "username": "u1503719_mcg",
+            "password": "uUO9YdvG"
+        }
+    ]
+}
