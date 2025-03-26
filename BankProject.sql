@@ -1,21 +1,27 @@
-use bankproject;
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 26, 2025 at 12:29 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
-CREATE TABLE `logins` (
-  `ID` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB ;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Dumping data for table `logins`
+-- Database: `bankproject`
 --
-
-INSERT INTO `logins` (`ID`, `username`, `password`) VALUES
-(1, 'hugh mcgovern', '123456'),
-(2, 'John Malone', 'Betty');
 
 -- --------------------------------------------------------
-
 
 --
 -- Table structure for table `accounts`
@@ -27,7 +33,7 @@ CREATE TABLE `accounts` (
   `lastname` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `balance` int(10) NOT NULL
-) ENGINE=InnoDB ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `accounts`
@@ -38,13 +44,31 @@ INSERT INTO `accounts` (`ID`, `firstname`, `lastname`, `address`, `balance`) VAL
 (108, 'Yanni', 'Zao', 'Bejing', 50500),
 (112, 'Patricia', 'Smith', 'Belfast', 52500),
 (135, 'Darren', 'Gillespie', 'London', 3050),
-(141, 'Eric', 'Bond', 'Kensington', 1000),
-(144, 'Jerome', 'Lepine', 'Lyon', 42250),
-(159, 'Simon ', 'Reeve', 'London', 2300);
+(141, 'Eric', 'Bond', 'Kensington', 1000);
 
 -- --------------------------------------------------------
 
+--
+-- Table structure for table `logins`
+--
 
+CREATE TABLE `logins` (
+  `ID` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `logins`
+--
+
+INSERT INTO `logins` (`ID`, `username`, `password`) VALUES
+(1, 'hugh mcgovern', '123456'),
+(2, 'John Malone', 'Betty');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `transactions`
 --
 
@@ -56,7 +80,7 @@ CREATE TABLE `transactions` (
   `Debit` int(10) NOT NULL,
   `Credit` int(10) NOT NULL,
   `Balance` int(10) NOT NULL
-) ENGINE=InnoDB ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `transactions`
@@ -145,19 +169,18 @@ INSERT INTO `transactions` (`TransID`, `Date`, `ReferenceID`, `Reference`, `Debi
 --
 
 --
--- Indexes for table `logins`
---
-ALTER TABLE `logins`
-  ADD PRIMARY KEY (`ID`);
-
-
 -- Indexes for table `accounts`
 --
 ALTER TABLE `accounts`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `logins`
+--
+ALTER TABLE `logins`
+  ADD PRIMARY KEY (`ID`);
 
+--
 -- Indexes for table `transactions`
 --
 ALTER TABLE `transactions`
@@ -172,4 +195,8 @@ ALTER TABLE `transactions`
 --
 ALTER TABLE `transactions`
   MODIFY `TransID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
---
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
