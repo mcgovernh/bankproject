@@ -29,25 +29,25 @@ class database:
         my_conn = db_conn.cursor()
     
     def connect_getstudent(my_conn):
-        my_conn.execute("SELECT * FROM students")
+        my_conn.execute("SELECT * FROM accounts")
 
     def connect_deletestudent(my_conn,id):
-        my_conn.execute("DELETE FROM students WHERE ID = %s",id)
+        my_conn.execute("DELETE FROM accounts WHERE ID = %s",id)
 
     def connect_selectstudent(my_conn,id):
-        my_conn.execute('SELECT * FROM students WHERE ID = %s',id)
+        my_conn.execute('SELECT * FROM accounts WHERE ID = %s',id)
 
     def connect_updatestudent(cursor, firstname, lastname, address, balance):
-        cursor.execute('INSERT INTO Students (firstname, lastname, address, balance) VALUES (%s,%s,%s,%s) ' , (firstname,lastname,address,balance))
+        cursor.execute('INSERT INTO accounts (firstname, lastname, address, balance) VALUES (%s,%s,%s,%s) ' , (firstname,lastname,address,balance))
 
     def connect_updateeditstudent(cursor, firstname, lastname, address, balance,id):
-        cursor.execute('UPDATE Students '
+        cursor.execute('UPDATE accounts '
                        'SET firstname=%s, lastname=%s, address=%s, balance=%s'
                        'WHERE ID = %s ',
                         (firstname,lastname,address,balance,id))
         
     def updatebalance(cursor, balance,id):
-        cursor.execute('UPDATE Students '
+        cursor.execute('UPDATE accounts '
                        'SET balance=%s'
                        'WHERE ID = %s ',
                         (balance,id))
