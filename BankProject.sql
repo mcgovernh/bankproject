@@ -189,7 +189,17 @@ ALTER TABLE `transactions`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+-- AUTO_INCREMENT for table `accounts`
+--
+ALTER TABLE `accounts`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
 
+--
+-- AUTO_INCREMENT for table `logins`
+--
+ALTER TABLE `logins`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 --
 -- AUTO_INCREMENT for table `transactions`
 --
